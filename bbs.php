@@ -34,7 +34,6 @@ $content = $_POST["content"];
 //改行を自動で挿入
 $content = nl2br($content);
 
-
 print('<p>投稿者:'.$name.'</p>');
 print('<p>内容:</p>');
 print('<p>'.$contents.'</p>');
@@ -43,7 +42,7 @@ print('<p>'.$contents.'</p>');
 ?>
 </p>
 
-
+おわりんご。
 
 </body>
 </html>
