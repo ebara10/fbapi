@@ -36,7 +36,7 @@ $content = nl2br($content);
 
 print('<p>投稿者:'.$name.'</p>');
 print('<p>内容:</p>');
-print('<p>'. $contents .'</p>');
+print('<p>'.$content.'</p>');
 
 $date = date("Y/m/d (D) H:i:s");
 $graph_date = date("Y/m/d (D) H:i:s");
