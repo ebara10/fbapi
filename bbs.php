@@ -22,6 +22,7 @@
 
 <form method="POST" action="<?php print($_SERVER['PHP_SELF']) ?>">
 名前:<input type="text" name="name" value="test"><br>
+タイトル:<input type="text" name="title" value="test"><br>
 内容:<textarea name="content" rows="4" cols="40" alt="test"></textarea><br>
 <input type="submit" name="btn1" value="送信">
 </form>
@@ -29,22 +30,15 @@
 <?php
 
 $name = $_POST["name"];
-$content = $_POST["content"];
-
-//改行を自動で挿入
-$content = nl2br($content);
+$title = $_POST["title"];
+$content = nl2br($_POST["content"]);
+$post_date = date('y/m/d') + time();
 
 print('<p>投稿者:'.$name.'</p>');
+print('<p>タイトル:'.$title.'</p>');
+print('<p>投稿日時:'.$post_date.'</p>');
 print('<p>内容:</p>');
 print('<p>'.$content.'</p>');
-
-$date = date("Y/m/d (D) H:i:s");
-$graph_date = date("Y/m/d (D) H:i:s");
-$time =  time() ;
-
-echo $date;
-echo $graph_date;
-echo $time
 
 ?>
 

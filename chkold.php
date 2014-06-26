@@ -21,9 +21,9 @@ $old = $_GET['old'];
 $pref = $_GET['pref'];
 
 if ($old > 20 and $old <40 and $pref == 東京){
- print "いいかんじ<br>";
-}else{
-print "えー<br>";
+  print "いいかんじ<br>";
+} else {
+  print "えー<br>";
 }
 echo "${pref}出身の${old}さい"
 ?>

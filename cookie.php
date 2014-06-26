@@ -15,7 +15,7 @@
         $count = 1;
     }
 
-    $flag = setcookie("visited", $count);
+    $flag = setcookie("visited", $count, time() + 86400);
 ?>
 
 <p>PHPのテストです。</p>
