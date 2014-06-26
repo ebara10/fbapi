@@ -21,9 +21,19 @@
 <p>PHPのテストです。</p>
 
 <form method="POST" action="<?php print($_SERVER['PHP_SELF']) ?>">
-    名前:<input type="text" name="name" value="test"><br>
-    タイトル:<input type="text" name="title" value="test"><br>
-    <p>内容:</p>
+<table>
+    <tr>
+        <td>名前:</td>
+        <td><input type="text" name="name" value="test"></td>
+    </tr>
+    <tr>
+        <td>タイトル:</td>
+        <td><input type="text" name="title" value="test"></td>
+    </tr>
+    <tr>
+        <td><p>内容:</p></td>>
+    </tr>
+</table>
         <p><textarea name="content" rows="4" cols="40" alt="test"></textarea></p>
     <input type="submit" name="btn1" value="送信">
 </form>
