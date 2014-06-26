@@ -34,11 +34,11 @@ $postTitle = $_POST["title"];
 $postContent = nl2br($_POST["content"]);
 $postDate = date('y/m/d') + time();
 
-print('<p>投稿者:'.$name.'</p>');
-print('<p>タイトル:'.$title.'</p>');
+print('<p>投稿者:'.$postName.'</p>');
+print('<p>タイトル:'.$postTitle.'</p>');
 print('<p>投稿日時:'.$postDate.'</p>');
 print('<p>内容:</p>');
-print('<p>'.$content.'</p>');
+print('<p>'.$postContent.'</p>');
 ?>
 
 
