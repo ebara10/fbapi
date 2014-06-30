@@ -6,7 +6,7 @@
 
     //PDOでDBに接続
     try {
-    	$pdo = new PDO($dsn, $username, $passwd);
+    	$pdo = new PDO($url, $username, $passwd);
     } catch (PDOException $e) {
     	exit("データベースに接続できませんでした" . $e->getMessage());
     }
