@@ -7,13 +7,13 @@
     //PDOでDBに接続
     try {
     	$pdo = new PDO($url, $username, $passwd);
+    	print("接続に成功しました");
     } catch (PDOException $e) {
     	exit("データベースに接続できませんでした" . $e->getMessage());
     }
     // 実行
     $stmt = $pdo->prepare('SELECT * FROM bbs');
     $stmt->execute();
-    echo "$stmt"
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
