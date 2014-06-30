@@ -1,7 +1,37 @@
 <?php
-    $flag = setcookie("visited", 1);
+    $url = "localhost";
+    $dbname = "bbs";
+    $username = bbs;
+    $passwd = netmarketing;
+
+    //ユーザの入力項目は対策する
+    //XSS対策
+    $getName = htmlspecialchars($getName);
+    $getComent = htmlspecialchars($getComent);
+    
+    //マジッククォート対策
+    if(get_magic_quotes_gpc()) {
+    	//余計なエスケープ文字を取り除く
+    	$getName = stripslashes($getName);
+    	$getComent = stripslashes($getComent);
+    }
+    
+    //SQLインジェクション対策
+    $getName = mysql_real_escape_string($getName);
+    $getComent = mysql_real_escape_string($getComent);
+    
+    //PDOでDBに接続
+    try {
+    	$pdo = new PDO($dsn, $username, $passwd);
+    } catch (PDOException $e) {
+    	exit("データベースに接続できませんでした" . $e->getMessage());
+    }
+    // 実行
+    $stmt = $pdo->prepare('SELECT * FROM bbs');
+    $stmt->execute();
 ?>
 
+/*
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
     <title>PHP TEST</title>
@@ -14,7 +44,7 @@
     }else{
         $count = 1;
     }
-
+    echo "$stmt";
     $flag = setcookie("visited", $count);
 ?>
 
@@ -35,7 +65,7 @@
     </tr>
 </table>
         <p><textarea name="content" rows="4" cols="40" alt="test"></textarea></p>
-    <input type="submit" name="btn1" value="送信">
+    <input type="submit" name="btn1" value="投稿">
 </form>
 
 <?php
@@ -50,10 +80,8 @@ print('<p>投稿日時:'.$postDate.'</p>');
 print('<p>内容:</p>');
 print('<p>'.$postContent.'</p>');
 ?>
-
-
-
 おわりんご。
 
 </body>
 </html>
+*/
