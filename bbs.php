@@ -1,6 +1,6 @@
 <?php
-    $url = "localhost";
-    $dbname = "bbs";
+    $url = "mysql:host=localhost;";
+    $dbname = "dbname=bbs";
     $username = "bbs";
     $passwd = "netmarketing";
 
