@@ -13,6 +13,7 @@
     // 実行
     $stmt = $pdo->prepare('SELECT * FROM bbs');
     $stmt->execute();
+    echo "$stmt"
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
@@ -21,15 +22,6 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 </head>
 <body>
-<?php
-    if (isset($_COOKIE["visited"])){
-        $count = $_COOKIE["visited"] + 1;
-    }else{
-        $count = 1;
-    }
-    echo "$stmt";
-    $flag = setcookie("visited", $count);
-?>
 
 <p>PHPのテストです。</p>
 
