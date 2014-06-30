@@ -1,8 +1,8 @@
 <?php
     $url = "localhost";
     $dbname = "bbs";
-    $username = bbs;
-    $passwd = netmarketing;
+    $username = "bbs";
+    $passwd = "netmarketing";
 
     //PDOでDBに接続
     try {
