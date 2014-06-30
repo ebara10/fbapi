@@ -4,22 +4,6 @@
     $username = bbs;
     $passwd = netmarketing;
 
-    //ユーザの入力項目は対策する
-    //XSS対策
-    $getName = htmlspecialchars($getName);
-    $getComent = htmlspecialchars($getComent);
-    
-    //マジッククォート対策
-    if(get_magic_quotes_gpc()) {
-    	//余計なエスケープ文字を取り除く
-    	$getName = stripslashes($getName);
-    	$getComent = stripslashes($getComent);
-    }
-    
-    //SQLインジェクション対策
-    $getName = mysql_real_escape_string($getName);
-    $getComent = mysql_real_escape_string($getComent);
-    
     //PDOでDBに接続
     try {
     	$pdo = new PDO($dsn, $username, $passwd);
@@ -31,7 +15,6 @@
     $stmt->execute();
 ?>
 
-/*
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
     <title>PHP TEST</title>
@@ -84,4 +67,3 @@ print('<p>'.$postContent.'</p>');
 
 </body>
 </html>
-*/
