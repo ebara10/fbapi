@@ -10,22 +10,20 @@
     	print("接続に成功しました");
     } catch (PDOException $e) {
     	exit("データベースに接続できませんでした" . $e->getMessage());
+    	die();
     }
-    // 実行
+    // 掲示板一覧表示の実行
     $stmt = $pdo->prepare('SELECT * FROM bbs');
-    $stmt->execute();
+    $data = $stmt->fetch(PDO::FETCH_ASSOC)
 ?>
-
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
     <title>PHP TEST</title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 </head>
 <body>
-
 <p>PHPのテストです。</p>
-
-<form method="POST" action="<?php print($_SERVER['PHP_SELF']) ?>">
+<form method="POST" action="insert.php">
 <table>
     <tr>
         <td>名前:</td>
@@ -44,10 +42,7 @@
 </form>
 
 <?php
-$postName = $_POST["name"];
-$postTitle = $_POST["title"];
-$postContent = nl2br($_POST["content"]);
-$postDate = date('y/m/d') + time();
+
 
 print('<p>投稿者:'.$postName.'</p>');
 print('<p>タイトル:'.$postTitle.'</p>');
