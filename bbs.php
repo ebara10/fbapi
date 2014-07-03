@@ -12,9 +12,7 @@
     	exit("データベースに接続できませんでした" . $e->getMessage());
     	die();
     }
-    // 掲示板一覧表示の実行
-    $stmt = $pdo->prepare('SELECT * FROM bbs');
-    $data = $stmt->fetch(PDO::FETCH_ASSOC)
+
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
