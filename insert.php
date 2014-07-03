@@ -30,3 +30,13 @@ $stmt -> bindValue(':post_date', $post_date,　PDO::PARAM_STR);
 $stmt->execute();
 
 ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+    <title>PHP TEST</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+
+</body>
+</html>
