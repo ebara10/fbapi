@@ -39,15 +39,6 @@
     <input type="submit" name="btn1" value="投稿">
 </form>
 
-<?php
-
-
-print('<p>投稿者:'.$postName.'</p>');
-print('<p>タイトル:'.$postTitle.'</p>');
-print('<p>投稿日時:'.$postDate.'</p>');
-print('<p>内容:</p>');
-print('<p>'.$postContent.'</p>');
-?>
 おわりんご。
 
 </body>
